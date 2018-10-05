@@ -1,0 +1,17 @@
+version: '3'
+services:
+  bot:
+    build: .
+    command: node index.js
+    depends_on:
+      - rethink
+    restart: always
+    environment:
+      - TOKEN=
+      - PERSPECTIVE_API_KEY=
+      - OWNER=250322741406859265 # theGordHoard#9607, supports a comma seperated list
+  rethink:
+    image: rethinkdb
+    ports: 
+      - 28015
+      - 8080:8080
