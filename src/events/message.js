@@ -5,6 +5,8 @@ module.exports = bot => {
   bot.on('messageCreate', async msg => {
     if (msg.author.bot) return
     let res = await perspective.analyze(msg.cleanContent)
-    // msg.channel.createMessage(`Comment toxicity rating: ${res.attributeScores.TOXICITY.summaryScore.value * 100}%`)
+    if (res.attributeScores.TOXICITY.summaryScore.value > .7) {
+      msg.addReaction('⚠')
+    }
   })
 }
