@@ -1,0 +1,14 @@
+{
+  "name": "moderation-bot",
+  "version": "0.0.1",
+  "description": "A Discord bot to enable consistent cross-server moderation.",
+  "main": "src/index.js",
+  "repository": "https://github.com/unitedgobc/moderation-bot.git",
+  "author": "theGordHoard <gord@gordhoard.org>",
+  "license": "MIT",
+  "dependencies": {
+    "eris": "^0.9.0",
+    "perspective-api-client": "^3.0.0",
+    "rethinkdbdash": "^2.3.31"
+  }
+}
