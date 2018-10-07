@@ -2,14 +2,16 @@ FROM node:10-alpine
 
 RUN apk add git
 
-RUN mkdir /usr/web
-WORKDIR /usr/web
+RUN mkdir /usr/bot
+WORKDIR /usr/bot
 
-COPY package.json /usr/web
-COPY yarn.lock /usr/web
+COPY package.json /usr/bot
+COPY yarn.lock /usr/bot
 
 RUN yarn
 
-COPY ./src /usr/web
+COPY tsconfig.json /usr/bot
+COPY ./src /usr/bot/src
+RUN yarn build
 
-CMD ["node", "index.js"]
+CMD ["node", "dist/index.js"]
