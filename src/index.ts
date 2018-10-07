@@ -1,5 +1,6 @@
 import ModerationClient from './structures/ModerationClient'
 import * as rethinkdbdash from 'rethinkdbdash'
+import 'source-map-support/register'
 import * as path from 'path'
 
 const r = rethinkdbdash({
