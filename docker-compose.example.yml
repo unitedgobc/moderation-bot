@@ -10,6 +10,7 @@ services:
       - TOKEN=
       - PERSPECTIVE_API_KEY=
       - OWNER=250322741406859265 # theGordHoard#9607, supports a comma seperated list
+      - PREFIX=_,@mention
   rethink:
     image: rethinkdb
     ports: 
